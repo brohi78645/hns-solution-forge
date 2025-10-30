@@ -2,6 +2,7 @@ import { ShoppingCart, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useCart } from "@/hooks/useCart";
+import UserMenu from "./UserMenu";
 
 const Navigation = () => {
   const { items } = useCart();
@@ -43,6 +44,7 @@ const Navigation = () => {
               )}
             </Button>
           </Link>
+          <UserMenu />
         </div>
       </div>
     </nav>
