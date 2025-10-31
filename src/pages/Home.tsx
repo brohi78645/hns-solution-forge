@@ -3,6 +3,7 @@ import { supabase } from "@/integrations/supabase/client";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import ProductCard from "@/components/ProductCard";
+import Footer from "@/components/Footer";
 import { Skeleton } from "@/components/ui/skeleton";
 
 const Home = () => {
@@ -70,6 +71,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 };
