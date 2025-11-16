@@ -13,6 +13,12 @@ import warehouseSecurity from "@/assets/warehouse-security.jpg";
 import retailSecurity from "@/assets/retail-security.jpg";
 import controlRoom from "@/assets/control-room.jpg";
 import operator from "@/assets/operator.jpg";
+import cashierTheft from "@/assets/cashier-theft.jpg";
+import customerShoplifting from "@/assets/customer-shoplifting.jpg";
+import arrestScene from "@/assets/arrest-scene.jpg";
+import concealmentTheft from "@/assets/concealment-theft.jpg";
+import organizedTheft from "@/assets/organized-theft.jpg";
+import gasStationSecurity from "@/assets/gas-station-security.jpg";
 
 const AnimatedSection = ({ children, animation = "slide-up", delay = 0 }: { children: React.ReactNode, animation?: string, delay?: number }) => {
   const { ref, isVisible } = useScrollAnimation();
@@ -347,6 +353,126 @@ const Home = () => {
                 </Card>
               </AnimatedSection>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Security Scenarios Grid */}
+      <section className="py-20 px-4 bg-muted/30">
+        <div className="container mx-auto max-w-6xl">
+          <AnimatedSection animation="slide-up">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-foreground mb-4">
+                <span className="text-accent">Criminals Caught</span> on Camera
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                Real examples of theft, vandalism, and security breaches we detect and prevent every day
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <AnimatedSection animation="zoom-in" delay={0}>
+              <Card className="bg-card border-border hover:border-accent transition-all overflow-hidden group">
+                <div className="relative h-52 overflow-hidden">
+                  <img src={cashierTheft} alt="Cashier theft" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
+                  <div className="absolute bottom-4 left-4">
+                    <div className="text-sm font-bold text-accent">Employee Theft</div>
+                  </div>
+                </div>
+                <CardContent className="pt-4">
+                  <p className="text-sm text-muted-foreground">
+                    Register monitoring detects unauthorized cash handling and transaction manipulation
+                  </p>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
+
+            <AnimatedSection animation="zoom-in" delay={100}>
+              <Card className="bg-card border-border hover:border-accent transition-all overflow-hidden group">
+                <div className="relative h-52 overflow-hidden">
+                  <img src={customerShoplifting} alt="Shoplifting" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
+                  <div className="absolute bottom-4 left-4">
+                    <div className="text-sm font-bold text-accent">Active Shoplifting</div>
+                  </div>
+                </div>
+                <CardContent className="pt-4">
+                  <p className="text-sm text-muted-foreground">
+                    AI behavior analysis identifies suspicious activity and alerts operators instantly
+                  </p>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
+
+            <AnimatedSection animation="zoom-in" delay={200}>
+              <Card className="bg-card border-border hover:border-accent transition-all overflow-hidden group">
+                <div className="relative h-52 overflow-hidden">
+                  <img src={arrestScene} alt="Police response" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
+                  <div className="absolute bottom-4 left-4">
+                    <div className="text-sm font-bold text-accent">Law Enforcement</div>
+                  </div>
+                </div>
+                <CardContent className="pt-4">
+                  <p className="text-sm text-muted-foreground">
+                    Direct police coordination results in rapid arrests and criminal prosecution
+                  </p>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
+
+            <AnimatedSection animation="zoom-in" delay={300}>
+              <Card className="bg-card border-border hover:border-accent transition-all overflow-hidden group">
+                <div className="relative h-52 overflow-hidden">
+                  <img src={concealmentTheft} alt="Concealment" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
+                  <div className="absolute bottom-4 left-4">
+                    <div className="text-sm font-bold text-accent">Concealment Tactics</div>
+                  </div>
+                </div>
+                <CardContent className="pt-4">
+                  <p className="text-sm text-muted-foreground">
+                    Advanced tracking catches merchandise being hidden in bags, pockets, or clothing
+                  </p>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
+
+            <AnimatedSection animation="zoom-in" delay={400}>
+              <Card className="bg-card border-border hover:border-accent transition-all overflow-hidden group">
+                <div className="relative h-52 overflow-hidden">
+                  <img src={organizedTheft} alt="Gang theft" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
+                  <div className="absolute bottom-4 left-4">
+                    <div className="text-sm font-bold text-accent">Organized Crime</div>
+                  </div>
+                </div>
+                <CardContent className="pt-4">
+                  <p className="text-sm text-muted-foreground">
+                    Multi-person coordination detected and tracked across store in real-time
+                  </p>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
+
+            <AnimatedSection animation="zoom-in" delay={500}>
+              <Card className="bg-card border-border hover:border-accent transition-all overflow-hidden group">
+                <div className="relative h-52 overflow-hidden">
+                  <img src={gasStationSecurity} alt="Gas station" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
+                  <div className="absolute bottom-4 left-4">
+                    <div className="text-sm font-bold text-accent">Gas Station Protection</div>
+                  </div>
+                </div>
+                <CardContent className="pt-4">
+                  <p className="text-sm text-muted-foreground">
+                    Comprehensive forecourt coverage preventing fuel theft and protecting staff
+                  </p>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
           </div>
         </div>
       </section>
