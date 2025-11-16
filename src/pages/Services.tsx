@@ -68,6 +68,8 @@ const Services = () => {
               Complete CCTV monitoring solutions designed to protect your business around the clock
             </p>
           </div>
+        </div>
+      </section>
 
       {/* Services Grid */}
       <section className="py-16 px-4 bg-muted/30">
