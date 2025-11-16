@@ -62,8 +62,8 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Contact</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Email: info@hns-securewatch.com</li>
-              <li>Phone: +1 (800) HNS-WATCH</li>
+              <li>Email: admin@HNS.shop</li>
+              <li>Phone: +1 (346) 384-9811</li>
               <li>24/7 Monitoring Center</li>
             </ul>
           </div>
