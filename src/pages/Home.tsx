@@ -1,77 +1,145 @@
-import { useQuery } from "@tanstack/react-query";
-import { supabase } from "@/integrations/supabase/client";
 import Navigation from "@/components/Navigation";
-import Hero from "@/components/Hero";
-import ProductCard from "@/components/ProductCard";
 import Footer from "@/components/Footer";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link } from "react-router-dom";
+import { Eye, Shield, Clock, Video, AlertCircle, Camera } from "lucide-react";
 
 const Home = () => {
-  const { data: products, isLoading } = useQuery({
-    queryKey: ["featured-products"],
-    queryFn: async () => {
-      const { data, error } = await supabase
-        .from("products")
-        .select("*")
-        .eq("is_featured", true)
-        .order("created_at", { ascending: false });
-      
-      if (error) throw error;
-      return data;
+  const features = [
+    {
+      icon: Eye,
+      title: "24/7 Live Monitoring",
+      description: "Professional security operators watching your cameras around the clock from our central monitoring station."
     },
-  });
+    {
+      icon: Shield,
+      title: "Virtual Security Guard",
+      description: "Active deterrence and immediate response without the cost of on-site security personnel."
+    },
+    {
+      icon: AlertCircle,
+      title: "Instant Incident Response",
+      description: "Real-time alerts and coordinated emergency response when suspicious activity is detected."
+    },
+    {
+      icon: Video,
+      title: "Remote Camera Access",
+      description: "Business owners can log in anytime to view live feeds and recorded footage from anywhere."
+    },
+    {
+      icon: Camera,
+      title: "Universal Integration",
+      description: "Connect any IP camera, NVR, DVR, or mobile app camera to our monitoring platform."
+    },
+    {
+      icon: Clock,
+      title: "Cloud Storage",
+      description: "Secure cloud-based video storage with flexible retention periods and easy retrieval."
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      <Hero />
       
-      <section className="container mx-auto px-4 py-16">
-        <div className="mb-8">
-          <h2 className="text-3xl font-bold mb-2">Featured Products</h2>
-          <p className="text-muted-foreground">
-            Explore our top-rated networking and smart device solutions
-          </p>
+      {/* Hero Section */}
+      <section className="relative py-32 px-4 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-security opacity-80" />
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
         </div>
         
-        {isLoading ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[...Array(6)].map((_, i) => (
-              <div key={i} className="space-y-4">
-                <Skeleton className="aspect-square w-full" />
-                <Skeleton className="h-4 w-3/4" />
-                <Skeleton className="h-4 w-1/2" />
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {products?.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        )}
-      </section>
-
-      <section className="bg-muted py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <h3 className="text-xl font-bold mb-2">Free Shipping</h3>
-              <p className="text-muted-foreground">On orders over $100</p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-2">Expert Support</h3>
-              <p className="text-muted-foreground">24/7 technical assistance</p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-2">Secure Payments</h3>
-              <p className="text-muted-foreground">100% secure transactions</p>
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center">
+            <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
+              24/7 CCTV Monitoring
+              <br />
+              <span className="text-accent">For Your Business</span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-3xl mx-auto">
+              Professional remote surveillance services protecting shops, warehouses, gas stations, and commercial properties
+            </p>
+            
+            <p className="text-lg text-accent font-semibold mb-8">
+              Your Cameras, Our Eyes — 24/7
+            </p>
+            
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link to="/contact">
+                <Button size="lg" className="bg-accent text-accent-foreground hover:shadow-neon text-lg px-8">
+                  Get Started
+                </Button>
+              </Link>
+              <Link to="/services">
+                <Button size="lg" variant="outline" className="text-lg px-8 border-accent text-accent hover:bg-accent hover:text-accent-foreground">
+                  Our Services
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
-      
+
+      {/* Features Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Complete Security <span className="text-accent">Solution</span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Everything you need for professional CCTV monitoring and security management
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {features.map((feature, index) => (
+              <Card key={index} className="bg-card border-border hover:border-accent transition-all hover:shadow-panel">
+                <CardHeader>
+                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                    <feature.icon className="w-6 h-6 text-accent" />
+                  </div>
+                  <CardTitle className="text-foreground">{feature.title}</CardTitle>
+                  <CardDescription>{feature.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <Card className="bg-card border-accent shadow-neon">
+            <CardContent className="py-12 text-center">
+              <h2 className="text-3xl font-bold text-foreground mb-4">
+                Ready to Secure Your Business?
+              </h2>
+              <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
+                Join hundreds of businesses that trust us with their security. 
+                Get started with a free consultation today.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <Link to="/pricing">
+                  <Button size="lg" className="bg-accent text-accent-foreground hover:shadow-neon">
+                    View Pricing
+                  </Button>
+                </Link>
+                <Link to="/contact">
+                  <Button size="lg" variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
+                    Contact Sales
+                  </Button>
+                </Link>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

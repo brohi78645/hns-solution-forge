@@ -6,35 +6,35 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="font-semibold mb-4">About Us</h3>
+            <h3 className="font-semibold text-foreground mb-4">About SecureWatch</h3>
             <p className="text-sm text-muted-foreground">
-              Your trusted source for networking equipment and solutions.
+              Professional 24/7 CCTV remote monitoring services for businesses. Your Cameras, Our Eyes.
             </p>
           </div>
           
           <div>
-            <h3 className="font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="font-semibold text-foreground mb-4">Company</h3>
+            <ul className="space-y-2">
               <li>
-                <Link to="/shop" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Shop
+                <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">
+                  About Us
                 </Link>
               </li>
               <li>
-                <Link to="/cart" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Cart
+                <Link to="/services" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Services
                 </Link>
               </li>
               <li>
-                <Link to="/orders" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Orders
+                <Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Contact
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">Policies</h3>
+            <h3 className="font-semibold text-foreground mb-4">Policies</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link to="/refund-policy" className="text-muted-foreground hover:text-foreground transition-colors">
@@ -60,17 +60,17 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">Contact</h3>
+            <h3 className="font-semibold text-foreground mb-4">Contact</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Email: support@networkshop.com</li>
-              <li>Phone: (555) 123-4567</li>
-              <li>Hours: Mon-Fri 9AM-6PM</li>
+              <li>Email: info@securewatch.com</li>
+              <li>Phone: +1 (800) SECURE-1</li>
+              <li>24/7 Monitoring Center</li>
             </ul>
           </div>
         </div>
         
         <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} NetworkShop. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} SecureWatch CCTV Monitoring. All rights reserved.</p>
         </div>
       </div>
     </footer>
