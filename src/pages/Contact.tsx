@@ -88,16 +88,14 @@ const Contact = () => {
                     <Phone className="w-5 h-5 text-accent mt-1" />
                     <div>
                       <p className="font-semibold text-foreground">Phone</p>
-                      <p className="text-sm text-muted-foreground">+1 (800) SECURE-1</p>
-                      <p className="text-sm text-muted-foreground">+1 (800) 732-8731</p>
+                      <p className="text-sm text-muted-foreground">+1 (346) 384-9811</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <Mail className="w-5 h-5 text-accent mt-1" />
                     <div>
                       <p className="font-semibold text-foreground">Email</p>
-                      <p className="text-sm text-muted-foreground">info@securewatch.com</p>
-                      <p className="text-sm text-muted-foreground">support@securewatch.com</p>
+                      <p className="text-sm text-muted-foreground">admin@HNS.shop</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -105,9 +103,9 @@ const Contact = () => {
                     <div>
                       <p className="font-semibold text-foreground">Address</p>
                       <p className="text-sm text-muted-foreground">
-                        123 Security Boulevard<br />
-                        Suite 500<br />
-                        Los Angeles, CA 90001
+                        5830 E 2nd Street<br />
+                        Suite 7000 #28286<br />
+                        Casper, WY 82609
                       </p>
                     </div>
                   </div>
