@@ -8,90 +8,60 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* HNS Solution - Tech E-Commerce Design System */
-    /* Base colors - Deep navy and pure whites */
-    --background: 0 0% 100%;
-    --foreground: 210 100% 8%;
+    /* CCTV Security Monitoring - Dark Tech Theme */
+    /* Dark base with neon blue accents */
+    --background: 220 26% 8%;
+    --foreground: 210 40% 98%;
     
-    /* Navy blue theme */
-    --navy: 210 100% 12%;
-    --navy-light: 210 60% 20%;
-    --navy-dark: 210 100% 8%;
+    /* Security dark theme */
+    --security-dark: 220 26% 6%;
+    --security-darker: 220 30% 4%;
+    --security-panel: 220 22% 12%;
     
-    /* Electric blue accents */
-    --blue: 207 90% 54%;
-    --blue-light: 207 90% 65%;
-    --blue-glow: 207 100% 70%;
+    /* Neon blue accents */
+    --neon-blue: 195 100% 50%;
+    --neon-blue-glow: 195 100% 60%;
+    --neon-cyan: 180 100% 50%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 210 100% 8%;
+    --card: 220 22% 12%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 210 100% 8%;
+    --popover: 220 22% 12%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 210 100% 12%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 195 100% 50%;
+    --primary-foreground: 220 26% 8%;
 
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 210 100% 12%;
+    --secondary: 220 20% 16%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 15% 95%;
-    --muted-foreground: 210 12% 45%;
+    --muted: 220 20% 18%;
+    --muted-foreground: 210 20% 65%;
 
-    --accent: 207 90% 54%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 195 100% 50%;
+    --accent-foreground: 220 26% 8%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 210 20% 90%;
-    --input: 210 20% 90%;
-    --ring: 207 90% 54%;
+    --border: 220 20% 20%;
+    --input: 220 20% 18%;
+    --ring: 195 100% 50%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
     
-    /* Custom design tokens */
-    --gradient-hero: linear-gradient(135deg, hsl(210 100% 12%) 0%, hsl(210 60% 20%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(207 90% 54%) 0%, hsl(207 100% 70%) 100%);
-    --shadow-soft: 0 4px 6px -1px hsl(210 100% 12% / 0.1), 0 2px 4px -2px hsl(210 100% 12% / 0.1);
-    --shadow-medium: 0 10px 15px -3px hsl(210 100% 12% / 0.1), 0 4px 6px -4px hsl(210 100% 12% / 0.1);
-    --shadow-large: 0 20px 25px -5px hsl(210 100% 12% / 0.15), 0 8px 10px -6px hsl(210 100% 12% / 0.1);
-    --shadow-glow: 0 0 30px hsl(207 90% 54% / 0.3);
+    /* Security theme design tokens */
+    --gradient-security: linear-gradient(135deg, hsl(220 26% 8%) 0%, hsl(220 22% 12%) 100%);
+    --gradient-neon: linear-gradient(135deg, hsl(195 100% 50%) 0%, hsl(180 100% 50%) 100%);
+    --shadow-neon: 0 0 20px hsl(195 100% 50% / 0.3), 0 0 40px hsl(195 100% 50% / 0.15);
+    --shadow-panel: 0 8px 16px hsl(220 30% 4% / 0.4);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
-    --background: 210 100% 8%;
-    --foreground: 0 0% 98%;
-
-    --card: 210 60% 12%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 210 60% 12%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 207 90% 54%;
-    --primary-foreground: 210 100% 8%;
-
-    --secondary: 210 40% 18%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 210 40% 18%;
-    --muted-foreground: 210 15% 65%;
-
-    --accent: 207 90% 54%;
-    --accent-foreground: 210 100% 8%;
-
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 210 40% 22%;
-    --input: 210 40% 22%;
-    --ring: 207 90% 54%;
-    
-    /* Dark mode gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(210 100% 8%) 0%, hsl(210 60% 15%) 100%);
-    --shadow-glow: 0 0 30px hsl(207 90% 54% / 0.5);
+    /* Same as light mode - always dark theme */
+    --background: 220 26% 8%;
+    --foreground: 210 40% 98%;
   }
 }
 
