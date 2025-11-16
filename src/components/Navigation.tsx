@@ -15,7 +15,10 @@ const Navigation = () => {
           <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
             <Shield className="text-accent-foreground w-5 h-5" />
           </div>
-          <span className="text-primary-foreground font-bold text-xl">SecureWatch</span>
+          <div className="flex flex-col">
+            <span className="text-primary-foreground font-bold text-xl leading-none">HNS</span>
+            <span className="text-primary-foreground/70 text-xs leading-none">(Secure Watch)</span>
+          </div>
         </Link>
         
         <div className="hidden md:flex items-center gap-6">

@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="font-semibold text-foreground mb-4">About SecureWatch</h3>
+            <h3 className="font-semibold text-foreground mb-4">About HNS</h3>
             <p className="text-sm text-muted-foreground">
               Professional 24/7 CCTV remote monitoring services for businesses. Your Cameras, Our Eyes.
             </p>
@@ -62,15 +62,15 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Contact</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Email: info@securewatch.com</li>
-              <li>Phone: +1 (800) SECURE-1</li>
+              <li>Email: info@hns-securewatch.com</li>
+              <li>Phone: +1 (800) HNS-WATCH</li>
               <li>24/7 Monitoring Center</li>
             </ul>
           </div>
         </div>
         
         <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} SecureWatch CCTV Monitoring. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} HNS (Secure Watch) CCTV Monitoring. All rights reserved.</p>
         </div>
       </div>
     </footer>
