@@ -1,12 +1,14 @@
-import { Shield, ShoppingCart } from "lucide-react";
+import { Shield, ShoppingCart, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useCart } from "@/hooks/useCart";
 import UserMenu from "./UserMenu";
+import { useState } from "react";
 
 const Navigation = () => {
   const { getTotalItems } = useCart();
   const itemCount = getTotalItems();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <nav className="sticky top-0 z-50 bg-primary/95 backdrop-blur-sm border-b border-border">
@@ -57,13 +59,83 @@ const Navigation = () => {
             </Button>
           </Link>
           <UserMenu />
-          <Link to="/contact">
-            <Button className="bg-accent text-accent-foreground hover:shadow-neon hidden md:inline-flex">
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="md:hidden text-primary-foreground"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
+          <Link to="/contact" className="hidden md:block">
+            <Button className="bg-accent text-accent-foreground hover:shadow-neon">
               Get Started
             </Button>
           </Link>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-primary/98 backdrop-blur-sm border-t border-border">
+          <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
+            <Link 
+              to="/" 
+              className="text-primary-foreground/90 hover:text-primary-foreground transition-colors py-2 text-lg"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Home
+            </Link>
+            <Link 
+              to="/services" 
+              className="text-primary-foreground/90 hover:text-primary-foreground transition-colors py-2 text-lg"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Services
+            </Link>
+            <Link 
+              to="/technology" 
+              className="text-primary-foreground/90 hover:text-primary-foreground transition-colors py-2 text-lg"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Technology
+            </Link>
+            <Link 
+              to="/shop" 
+              className="text-primary-foreground/90 hover:text-primary-foreground transition-colors py-2 text-lg"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Shop
+            </Link>
+            <Link 
+              to="/pricing" 
+              className="text-primary-foreground/90 hover:text-primary-foreground transition-colors py-2 text-lg"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Pricing
+            </Link>
+            <Link 
+              to="/about" 
+              className="text-primary-foreground/90 hover:text-primary-foreground transition-colors py-2 text-lg"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              About
+            </Link>
+            <Link 
+              to="/contact" 
+              className="text-primary-foreground/90 hover:text-primary-foreground transition-colors py-2 text-lg"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Contact
+            </Link>
+            <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
+              <Button className="bg-accent text-accent-foreground hover:shadow-neon w-full mt-2">
+                Get Started
+              </Button>
+            </Link>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
