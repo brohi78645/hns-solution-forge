@@ -37,6 +37,11 @@ const Footer = () => {
             <h3 className="font-semibold text-foreground mb-3 md:mb-4 text-sm md:text-base">Policies</h3>
             <ul className="space-y-2 text-xs md:text-sm">
               <li>
+                <Link to="/privacy-policy" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
                 <Link to="/refund-policy" className="text-muted-foreground hover:text-foreground transition-colors">
                   Refund & Returns Policy
                 </Link>
