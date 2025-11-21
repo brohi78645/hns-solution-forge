@@ -44,12 +44,13 @@ const ProductCard = ({ product }: ProductCardProps) => {
           <img
             src={productImage}
             alt={product.name}
+            loading="lazy"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
         </div>
       </Link>
       
-      <CardContent className="p-4">
+      <CardContent className="p-3 md:p-4">
         <div className="mb-2">
           <Badge variant="secondary" className="text-xs">
             {product.category}
@@ -57,33 +58,33 @@ const ProductCard = ({ product }: ProductCardProps) => {
         </div>
         
         <Link to={`/product/${product.id}`}>
-          <h3 className="font-semibold text-lg mb-2 line-clamp-2 hover:text-accent transition-colors">
+          <h3 className="font-semibold text-sm md:text-lg mb-2 line-clamp-2 hover:text-accent transition-colors">
             {product.name}
           </h3>
         </Link>
         
-        <p className="text-muted-foreground text-sm line-clamp-2 mb-3">
+        <p className="text-muted-foreground text-xs md:text-sm line-clamp-2 mb-3 hidden sm:block">
           {product.description}
         </p>
         
-        <div className="flex items-center justify-between">
-          <span className="text-2xl font-bold text-accent">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between gap-2">
+          <span className="text-xl md:text-2xl font-bold text-accent">
             ${product.price.toFixed(2)}
           </span>
-          <span className="text-sm text-muted-foreground">
+          <span className="text-xs md:text-sm text-muted-foreground">
             {product.stock > 0 ? `${product.stock} in stock` : 'Out of stock'}
           </span>
         </div>
       </CardContent>
       
-      <CardFooter className="p-4 pt-0">
+      <CardFooter className="p-3 md:p-4 pt-0">
         <Button 
-          className="w-full" 
+          className="w-full min-h-[44px]" 
           onClick={handleAddToCart}
           disabled={product.stock === 0}
         >
           <ShoppingCart className="mr-2 h-4 w-4" />
-          Add to Cart
+          <span className="text-sm md:text-base">Add to Cart</span>
         </Button>
       </CardFooter>
     </Card>
