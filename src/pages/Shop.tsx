@@ -22,16 +22,16 @@ const Shop = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      <section className="container mx-auto px-4 py-16">
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold mb-2">All Products</h1>
-          <p className="text-muted-foreground">
+      <section className="container mx-auto px-4 py-12 md:py-16">
+        <div className="mb-6 md:mb-8">
+          <h1 className="text-3xl md:text-4xl font-bold mb-2">All Products</h1>
+          <p className="text-sm md:text-base text-muted-foreground">
             Browse our complete catalog of networking and smart devices
           </p>
         </div>
         
         {isLoading ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {[...Array(8)].map((_, i) => (
               <div key={i} className="space-y-4">
                 <Skeleton className="aspect-square w-full" />
@@ -41,7 +41,7 @@ const Shop = () => {
             ))}
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {products?.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}

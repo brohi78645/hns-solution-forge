@@ -88,7 +88,7 @@ const Home = () => {
       <Navigation />
       
       {/* Hero Section with Parallax */}
-      <section className="relative py-32 px-4 overflow-hidden min-h-[90vh] flex items-center">
+      <section className="relative py-20 md:py-32 px-4 overflow-hidden min-h-[60vh] md:min-h-[90vh] flex items-center">
         {/* Parallax Background Image */}
         <div 
           className="absolute inset-0 z-0"
@@ -123,7 +123,7 @@ const Home = () => {
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center">
             <AnimatedSection animation="zoom-in">
-              <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
                 24/7 CCTV Monitoring
                 <br />
                 <span className="text-accent drop-shadow-[0_0_30px_rgba(0,220,255,0.5)]">For Your Business</span>
@@ -131,7 +131,7 @@ const Home = () => {
             </AnimatedSection>
             
             <AnimatedSection animation="slide-up" delay={200}>
-              <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-3xl mx-auto">
+              <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-4 max-w-3xl mx-auto">
                 Professional remote surveillance services protecting shops, warehouses, gas stations, and commercial properties
               </p>
             </AnimatedSection>
@@ -143,14 +143,14 @@ const Home = () => {
             </AnimatedSection>
             
             <AnimatedSection animation="slide-up" delay={600}>
-              <div className="flex flex-wrap gap-4 justify-center">
-                <Link to="/contact">
-                  <Button size="lg" className="bg-accent text-accent-foreground hover:shadow-neon text-lg px-8 hover:scale-105 transition-all">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
+                <Link to="/contact" className="w-full sm:w-auto">
+                  <Button size="lg" className="bg-accent text-accent-foreground hover:shadow-neon text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto min-h-[48px] hover:scale-105 transition-all">
                     Get Started
                   </Button>
                 </Link>
-                <Link to="/services">
-                  <Button size="lg" variant="outline" className="text-lg px-8 border-accent text-accent hover:bg-accent hover:text-accent-foreground hover:scale-105 transition-all">
+                <Link to="/services" className="w-full sm:w-auto">
+                  <Button size="lg" variant="outline" className="text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto min-h-[48px] border-accent text-accent hover:bg-accent hover:text-accent-foreground hover:scale-105 transition-all">
                     Our Services
                   </Button>
                 </Link>
@@ -161,16 +161,16 @@ const Home = () => {
       </section>
 
       {/* Stats Section with 3D Cards */}
-      <section className="py-16 px-4 bg-muted/30 relative">
+      <section className="py-12 md:py-16 px-4 bg-muted/30 relative">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {stats.map((stat, index) => (
               <AnimatedSection key={index} animation="zoom-in" delay={index * 100}>
                 <Card className="bg-card border-border hover:border-accent transition-all hover:shadow-neon hover:scale-105 transform-gpu">
-                  <CardContent className="py-8 text-center">
-                    <stat.icon className="w-8 h-8 text-accent mx-auto mb-4" />
-                    <div className="text-3xl font-bold text-foreground mb-2">{stat.value}</div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  <CardContent className="py-4 md:py-8 text-center">
+                    <stat.icon className="w-6 h-6 md:w-8 md:h-8 text-accent mx-auto mb-2 md:mb-4" />
+                    <div className="text-2xl md:text-3xl font-bold text-foreground mb-1 md:mb-2">{stat.value}</div>
+                    <div className="text-xs md:text-sm text-muted-foreground">{stat.label}</div>
                   </CardContent>
                 </Card>
               </AnimatedSection>
@@ -180,7 +180,7 @@ const Home = () => {
       </section>
 
       {/* Live Monitoring Showcase with Parallax Images */}
-      <section className="py-20 px-4 relative overflow-hidden">
+      <section className="py-12 md:py-20 px-4 relative overflow-hidden">
         <div 
           className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-96 opacity-20 pointer-events-none"
           style={{
@@ -192,21 +192,22 @@ const Home = () => {
         />
         
         <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <AnimatedSection animation="slide-right">
               <div className="relative">
                 <img 
                   src={controlRoom} 
                   alt="Professional monitoring center"
+                  loading="lazy"
                   className="rounded-lg shadow-neon border border-accent/30 transform hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute -bottom-6 -right-6 w-48 h-48 border-2 border-accent/30 rounded-lg pointer-events-none" />
+                <div className="hidden md:block absolute -bottom-6 -right-6 w-48 h-48 border-2 border-accent/30 rounded-lg pointer-events-none" />
               </div>
             </AnimatedSection>
             
             <AnimatedSection animation="slide-left">
               <div>
-                <h2 className="text-4xl font-bold text-foreground mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 md:mb-6">
                   Professional <span className="text-accent">Monitoring Center</span>
                 </h2>
                 <p className="text-muted-foreground text-lg mb-6">
